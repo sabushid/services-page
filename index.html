@@ -210,6 +210,39 @@
     .result-val { font-family: 'Montserrat', sans-serif; font-size: 30px; font-weight: 800; color: #c3aaea; margin-bottom: 8px; }
     .result-label { font-size: 14px; color: rgba(255,255,255,0.6); }
 
+    /* -- Form -- */
+    .form-section { background: #f7f5fc; }
+    .form-grid { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; }
+    @media(min-width:768px) { .form-grid { grid-template-columns: 1fr 1fr; gap: 64px; } }
+    .form-benefits h2 { font-family: 'Montserrat', sans-serif; font-size: clamp(28px, 4vw, 36px); font-weight: 800; margin-bottom: 20px; }
+    .form-benefits h2 em { font-style: normal; background: linear-gradient(135deg, #5400b1, #804dd3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .form-benefits > p { color: #6b7280; font-size: 18px; line-height: 1.7; margin-bottom: 32px; }
+    .benefit-list { list-style: none; }
+    .benefit-list li { display: flex; align-items: center; gap: 12px; padding: 8px 0; color: #374151; font-weight: 500; }
+    .benefit-check { width: 28px; height: 28px; border-radius: 50%; background: rgba(84,0,177,0.05); color: #5400b1; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; }
+    .form-card { background: #fff; border-radius: 24px; padding: 40px; border: 1px solid rgba(84,0,177,0.05); box-shadow: 0 20px 60px rgba(84,0,177,0.08); position: relative; overflow: hidden; }
+    .form-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #5400b1, #804dd3, #c3aaea); }
+    .form-card h3 { font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 700; text-align: center; margin-bottom: 28px; }
+    .form-group { margin-bottom: 16px; }
+    .form-label { display: block; font-size: 12px; font-weight: 600; color: #374151; margin-bottom: 4px; }
+    .form-label .req { color: #5400b1; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media(max-width:500px) { .form-row { grid-template-columns: 1fr; } }
+    .form-input { width: 100%; padding: 14px 16px; min-height: 48px; border-radius: 12px; border: 1px solid rgba(84,0,177,0.1); background: #f7f5fc; font-size: 14px; font-family: 'Roboto', sans-serif; outline: none; transition: all 0.2s; }
+    .form-input:focus { border-color: #804dd3; box-shadow: 0 0 0 3px rgba(128,77,211,0.15); background: #fff; }
+    .form-input:hover { border-color: rgba(128,77,211,0.3); }
+    .form-btn { width: 100%; padding: 16px; min-height: 52px; border: none; border-radius: 12px; background: linear-gradient(135deg, #5400b1, #804dd3); color: #fff; font-size: 16px; font-weight: 700; font-family: 'Montserrat', sans-serif; cursor: pointer; transition: all 0.3s; margin-top: 8px; }
+    .form-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(84,0,177,0.25); }
+    .form-btn:active { transform: scale(0.98); }
+    .form-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none !important; box-shadow: none !important; }
+    .form-privacy { text-align: center; font-size: 12px; color: #9ca3af; font-style: italic; margin-top: 12px; }
+    .form-error { text-align: center; font-size: 13px; color: #e53e3e; font-weight: 500; margin-top: 8px; display: none; }
+    .form-success { text-align: center; padding: 48px 0; display: none; }
+    .form-success-icon { width: 64px; height: 64px; border-radius: 50%; background: rgba(84,0,177,0.1); color: #5400b1; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 28px; }
+    .form-success h4 { font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+    .form-success p { color: #6b7280; font-size: 14px; }
+    @media(max-width:767px) { .form-card { padding: 24px; } }
+
     /* -- Final CTA -- */
     .final-cta { padding: 112px 24px; background: linear-gradient(135deg, #5400b1, #1a0040); color: #fff; text-align: center; position: relative; overflow: hidden; }
     .final-cta::before { content: ''; position: absolute; top: -30%; left: 50%; transform: translateX(-50%); width: 800px; height: 800px; border-radius: 50%; background: rgba(128,77,211,0.15); filter: blur(120px); }
@@ -282,7 +315,7 @@
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#services" data-i18n="nav_services">Services</a>
         <a href="#results" data-i18n="nav_results">Results</a>
-        <a href="https://rushanet.com/contact-us/" data-i18n="nav_contact">Contact</a>
+        <a href="#book-consultation" data-i18n="nav_contact">Contact</a>
       </nav>
       <div class="nav-right">
         <button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language">
@@ -290,7 +323,7 @@
           <span class="lang-sep">|</span>
           <span id="lang-fr-d" class="lang-inactive">FR</span>
         </button>
-        <a href="https://rushanet.com/contact-us/" class="nav-demo" data-i18n="nav_cta">Free Consultation</a>
+        <a href="#book-consultation" class="nav-demo" data-i18n="nav_cta">Free Consultation</a>
       </div>
       <div style="display:flex; align-items:center; gap:8px;" class="mob-only">
         <button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language" style="display:flex;">
@@ -307,7 +340,7 @@
       <div class="mobile-inner">
         <a href="#services" onclick="closeMob()" data-i18n="nav_services">Services</a>
         <a href="#results" onclick="closeMob()" data-i18n="nav_results">Results</a>
-        <a href="https://rushanet.com/contact-us/" onclick="closeMob()" class="mob-cta" data-i18n="nav_cta">Free Consultation</a>
+        <a href="#book-consultation" onclick="closeMob()" class="mob-cta" data-i18n="nav_cta">Free Consultation</a>
       </div>
     </div>
   </header>
@@ -329,7 +362,7 @@
       </h1>
       <p data-i18n="hero_desc">We build custom AI agents, SEO-optimized WordPress websites, and automated lead systems &mdash; plus expert AI consultation and hands-on training &mdash; helping Montreal &amp; South Shore businesses generate 2X&ndash;5X more leads, save 20+ hours a week, and achieve 3X&ndash;10X ROI.</p>
       <div class="hero-ctas">
-        <a href="https://rushanet.com/contact-us/" class="cta-primary" data-i18n="hero_cta">Book a Free Consultation</a>
+        <a href="#book-consultation" class="cta-primary" data-i18n="hero_cta">Book a Free Consultation</a>
       </div>
       <div class="hero-stats">
         <div class="hero-stat">
@@ -481,11 +514,76 @@
   </section>
 
   <!-- Final CTA -->
+  <!-- -- Form -- -->
+  <section id="book-consultation" class="section form-section" aria-label="Book Consultation">
+    <div class="section-inner">
+      <div class="form-grid">
+        <div class="form-benefits">
+          <h2 data-i18n="form_heading">Book Your Free <em>AI Consultation</em></h2>
+          <p data-i18n="form_sub">Tell us about your business and we'll show you exactly how AI can save you time, generate more leads, and grow your revenue.</p>
+          <ul class="benefit-list">
+            <li><span class="benefit-check">&#10003;</span> <span data-i18n="form_b1">Free consultation — no commitment</span></li>
+            <li><span class="benefit-check">&#10003;</span> <span data-i18n="form_b2">Custom AI strategy for your business</span></li>
+            <li><span class="benefit-check">&#10003;</span> <span data-i18n="form_b3">ROI analysis and action plan</span></li>
+            <li><span class="benefit-check">&#10003;</span> <span data-i18n="form_b4">Setup in days, not weeks</span></li>
+            <li><span class="benefit-check">&#10003;</span> <span data-i18n="form_b5">No technical skills required</span></li>
+          </ul>
+        </div>
+        <div class="form-card">
+          <h3 data-i18n="form_title">Book Your Free Consultation</h3>
+          <form id="consult-form" onsubmit="submitForm(event)">
+            <div class="form-group form-row">
+              <div>
+                <label class="form-label" data-i18n="form_fname">First Name <span class="req">*</span></label>
+                <input type="text" name="first_name" required placeholder="John" class="form-input" />
+              </div>
+              <div>
+                <label class="form-label" data-i18n="form_lname">Last Name <span class="req">*</span></label>
+                <input type="text" name="last_name" required placeholder="Smith" class="form-input" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-i18n="form_email">Email <span class="req">*</span></label>
+              <input type="email" name="email" required placeholder="john@example.com" class="form-input" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-i18n="form_phone">Phone <span class="req">*</span></label>
+              <input type="tel" name="phone" required placeholder="(514) 555-1234" class="form-input" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-i18n="form_challenge">Biggest Challenge</label>
+              <select name="challenge" class="form-input" id="form-challenge">
+                <option value="" disabled selected data-i18n="ch_default">Select one...</option>
+                <option>Need custom AI agents</option>
+                <option>Want AI consultation</option>
+                <option>Need AI training for my team</option>
+                <option>Want lead automation</option>
+                <option>Need social media automation</option>
+                <option>Need a WordPress website</option>
+                <option>Need Google Business optimization</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <input type="hidden" name="_subject" value="New Consultation Request — Rushanet Services" />
+            <button type="submit" class="form-btn" id="form-btn" data-i18n="form_submit">Book My Free Consultation</button>
+            <div id="form-error" class="form-error"></div>
+            <p class="form-privacy" data-i18n="form_privacy">Your info is safe. We'll never spam you.</p>
+          </form>
+          <div id="form-success" class="form-success">
+            <div class="form-success-icon">&#10003;</div>
+            <h4 data-i18n="form_success_title">Thank You!</h4>
+            <p data-i18n="form_success_desc">We'll review your request and get back to you within 24 hours.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="final-cta" aria-label="Call to action">
     <div class="final-cta-inner reveal">
       <h2 data-i18n="cta_title">Ready to Grow Your Business?</h2>
       <p data-i18n="cta_desc">Let's build the AI-powered systems that will generate more leads, save you time, and deliver real ROI &mdash; starting today.</p>
-      <a href="https://rushanet.com/contact-us/" class="final-cta-btn" data-i18n="cta_btn">Book a Free Consultation</a>
+      <a href="#book-consultation" class="final-cta-btn" data-i18n="cta_btn">Book a Free Consultation</a>
       <p class="final-cta-note" data-i18n="cta_note">No commitment &bull; 100% free &bull; Results in weeks</p>
     </div>
   </section>
@@ -500,6 +598,22 @@
     function closeMob() {
       document.getElementById('mob').classList.remove('open');
       document.querySelector('.hamburger').classList.remove('open');
+    }
+
+    /* -- Form submission -- */
+    async function submitForm(e) {
+      e.preventDefault();
+      var form = e.target, btn = document.getElementById('form-btn'), err = document.getElementById('form-error');
+      btn.disabled = true; btn.textContent = currentLang === 'fr' ? 'Envoi en cours...' : 'Sending...'; err.style.display = 'none';
+      try {
+        var res = await fetch('https://formsubmit.co/ajax/sabushid@gmail.com', { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) });
+        if (res.ok) { form.style.display = 'none'; document.getElementById('form-success').style.display = 'block'; }
+        else { throw new Error(); }
+      } catch(x) {
+        err.textContent = currentLang === 'fr' ? 'Une erreur est survenue. Veuillez réessayer.' : 'Something went wrong. Please try again.';
+        err.style.display = 'block'; btn.disabled = false;
+        btn.textContent = currentLang === 'fr' ? 'Réserver Ma Consultation Gratuite' : 'Book My Free Consultation';
+      }
     }
 
     /* -- Scroll reveal -- */
@@ -560,6 +674,24 @@
         cta_desc: "Construisons ensemble les syst\u00e8mes IA qui g\u00e9n\u00e9reront plus de leads, vous feront gagner du temps et livreront un vrai ROI \u2014 d\u00e8s aujourd\u2019hui.",
         cta_btn: "R\u00e9server une consultation gratuite",
         cta_note: "Sans engagement \u2022 100% gratuit \u2022 R\u00e9sultats en semaines",
+        // Form
+        form_heading: "R\u00e9servez Votre <em>Consultation IA Gratuite</em>",
+        form_sub: "Parlez-nous de votre entreprise et nous vous montrerons exactement comment l\u2019IA peut vous faire gagner du temps, g\u00e9n\u00e9rer plus de leads et augmenter vos revenus.",
+        form_b1: "Consultation gratuite \u2014 sans engagement",
+        form_b2: "Strat\u00e9gie IA personnalis\u00e9e pour votre entreprise",
+        form_b3: "Analyse ROI et plan d\u2019action",
+        form_b4: "Mise en place en jours, pas en semaines",
+        form_b5: "Aucune comp\u00e9tence technique requise",
+        form_title: "R\u00e9servez Votre Consultation Gratuite",
+        form_fname: "Pr\u00e9nom <span class=\"req\">*</span>",
+        form_lname: "Nom <span class=\"req\">*</span>",
+        form_email: "Email <span class=\"req\">*</span>",
+        form_phone: "T\u00e9l\u00e9phone <span class=\"req\">*</span>",
+        form_challenge: "Plus grand d\u00e9fi",
+        form_submit: "R\u00e9server Ma Consultation Gratuite",
+        form_privacy: "Vos informations sont en s\u00e9curit\u00e9. Nous ne vous spammerons jamais.",
+        form_success_title: "Merci\u00a0!",
+        form_success_desc: "Nous examinerons votre demande et vous recontacterons dans les 24 heures.",
         footer: "Tous droits r\u00e9serv\u00e9s."
       }
     };
