@@ -151,6 +151,9 @@
     .cta-primary { padding: 16px 40px; border-radius: 9999px; background: linear-gradient(135deg, #5400b1, #804dd3); color: #fff; font-weight: 600; font-size: 14px; transition: all 0.3s; box-shadow: 0 4px 20px rgba(84,0,177,0.4); }
     .cta-primary:hover { transform: translateY(-2px) scale(1.05); box-shadow: 0 8px 30px rgba(84,0,177,0.5); }
     .cta-primary:active { transform: scale(0.95); }
+    .cta-secondary { padding: 16px 40px; border-radius: 9999px; background: rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.4); color: #fff; font-weight: 600; font-size: 14px; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; backdrop-filter: blur(4px); }
+    .cta-secondary:hover { background: rgba(255,255,255,0.25); border-color: #c3aaea; transform: translateY(-2px) scale(1.05); }
+    .cta-secondary:active { transform: scale(0.95); }
 
     .hero-stats { display: flex; justify-content: center; gap: 32px; margin-top: 32px; flex-wrap: wrap; }
     .hero-stat { text-align: center; }
@@ -209,6 +212,17 @@
     .result-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-4px); }
     .result-val { font-family: 'Montserrat', sans-serif; font-size: 30px; font-weight: 800; color: #c3aaea; margin-bottom: 8px; }
     .result-label { font-size: 14px; color: rgba(255,255,255,0.6); }
+
+    /* -- How It Works -- */
+    .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; position: relative; }
+    .steps-line { display: none; position: absolute; top: 40px; left: 15%; right: 15%; height: 2px; background: linear-gradient(90deg, #c3aaea, #5400b1, #c3aaea); opacity: 0.2; }
+    @media(min-width:768px) { .steps-line { display: block; } }
+    .step { text-align: center; }
+    .step-num { width: 80px; height: 80px; border-radius: 50%; border: 2px solid #c3aaea; background: #fff; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 800; color: #5400b1; position: relative; z-index: 2; transition: all 0.3s; }
+    .step:hover .step-num { background: #5400b1; color: #fff; border-color: #5400b1; transform: scale(1.1); }
+    .step h3 { font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .step p { color: #6b7280; font-size: 14px; max-width: 280px; margin: 0 auto; line-height: 1.7; }
+    @media(max-width:767px) { .step-num { width: 64px; height: 64px; font-size: 20px; } }
 
     /* -- Form -- */
     .form-section { background: #f7f5fc; }
@@ -363,7 +377,7 @@
       <p data-i18n="hero_desc">We build custom AI agents, SEO-optimized WordPress websites, and automated lead systems &mdash; plus expert AI consultation and hands-on training &mdash; helping Montreal &amp; South Shore businesses generate 2X&ndash;5X more leads, save 20+ hours a week, and achieve 3X&ndash;10X ROI.</p>
       <div class="hero-ctas">
         <a href="#book-consultation" class="cta-primary" data-i18n="hero_cta">Book a Free Consultation</a>
-        <a href="#services" class="cta-secondary" data-i18n="hero_cta2"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg> See Our Work</a>
+        <a href="#how-it-works" class="cta-secondary" data-i18n="hero_cta2"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg> See How It Works</a>
       </div>
       <div class="hero-stats">
         <div class="hero-stat">
@@ -515,6 +529,35 @@
   </section>
 
   <!-- Final CTA -->
+  <!-- -- How It Works -- -->
+  <section id="how-it-works" class="section" aria-label="How It Works">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="section-tag" data-i18n="how_tag">How It Works</span>
+        <h2 class="section-title" data-i18n="how_title">Live in <em>3 Simple Steps</em></h2>
+        <p class="section-desc" data-i18n="how_desc">From consultation to fully operational in less than a week.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="steps-line"></div>
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3 data-i18n="how1_title">Free Consultation</h3>
+          <p data-i18n="how1_desc">We analyze your business, identify AI opportunities, and show you exactly where you're losing time and revenue.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3 data-i18n="how2_title">We Build It</h3>
+          <p data-i18n="how2_desc">We design and deploy your custom AI solution — agents, automation, website, or training — in days, not months.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3 data-i18n="how3_title">Start Growing</h3>
+          <p data-i18n="how3_desc">Your system goes live. Leads flow in, tasks get automated, and you focus on growing your business.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- -- Form -- -->
   <section id="book-consultation" class="section form-section" aria-label="Book Consultation">
     <div class="section-inner">
@@ -675,6 +718,17 @@
         cta_desc: "Construisons ensemble les syst\u00e8mes IA qui g\u00e9n\u00e9reront plus de leads, vous feront gagner du temps et livreront un vrai ROI \u2014 d\u00e8s aujourd\u2019hui.",
         cta_btn: "R\u00e9server une consultation gratuite",
         cta_note: "Sans engagement \u2022 100% gratuit \u2022 R\u00e9sultats en semaines",
+        // How It Works
+        how_tag: "Comment \u00c7a Marche",
+        how_title: "Op\u00e9rationnel en <em>3 \u00c9tapes Simples</em>",
+        how_desc: "De la consultation \u00e0 un syst\u00e8me pleinement op\u00e9rationnel en moins d\u2019une semaine.",
+        how1_title: "Consultation Gratuite",
+        how1_desc: "Nous analysons votre entreprise, identifions les opportunit\u00e9s IA et vous montrons exactement o\u00f9 vous perdez du temps et des revenus.",
+        how2_title: "Nous le Construisons",
+        how2_desc: "Nous concevons et d\u00e9ployons votre solution IA personnalis\u00e9e \u2014 agents, automatisation, site web ou formation \u2014 en jours, pas en mois.",
+        how3_title: "Commencez \u00e0 Cro\u00eetre",
+        how3_desc: "Votre syst\u00e8me est en ligne. Les leads affluent, les t\u00e2ches s\u2019automatisent et vous vous concentrez sur la croissance.",
+        hero_cta2: "Voir Comment \u00c7a Marche",
         // Form
         form_heading: "R\u00e9servez Votre <em>Consultation IA Gratuite</em>",
         form_sub: "Parlez-nous de votre entreprise et nous vous montrerons exactement comment l\u2019IA peut vous faire gagner du temps, g\u00e9n\u00e9rer plus de leads et augmenter vos revenus.",
